@@ -100,7 +100,7 @@ conexión hacia Supabase se leen desde `SUPABASE_DB_URL`).
 
 #### Diagrama de flujo
 
-![diagrama de flujo](assests/img/diagrama_de_flujo.png)
+![diagrama de flujo](assets/img/diagrama_de_flujo.png)
 
 ```mermaid
 flowchart LR
