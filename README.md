@@ -181,7 +181,7 @@ python3 tests/test_transformar.py   # self-check de las reglas de negocio
 
 Una vez cargados los datos, ejecutar `sql/analisis_anomalias.sql` desde el SQL
 Editor de Supabase para obtener los clientes con saltos de gasto ≥ 5x.
-![imagen de anomalias](assets/img/anomalias.png)
+
 
 ### Evidencia de ejecución en Supabase
 ![imagen de anomalias](assets/img/anomalias.png)
