@@ -184,10 +184,7 @@ Editor de Supabase para obtener los clientes con saltos de gasto ≥ 5x.
 ![imagen de anomalias](assets/img/anomalias.png)
 
 ### Evidencia de ejecución en Supabase
-
-> Captura del SQL Editor de Supabase con `sql/analisis_anomalias.sql` ejecutado
-> y los resultados visibles: **pendiente de agregar** — debe tomarse contra el
-> proyecto de Supabase real del autor, con sus propias credenciales.
+![imagen de anomalias](assets/img/anomalias.png)
 
 ## Fase 3: Propuesta de Orquestación
 
