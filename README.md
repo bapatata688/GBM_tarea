@@ -186,7 +186,6 @@ Editor de Supabase para obtener los clientes con saltos de gasto ≥ 5x.
 ![imagen de anomalias](assets/img/anomalias.png)
 
 ## Fase 3: Propuesta de Orquestación
-
 `dag_transacciones.py` define el DAG conceptual:
 
 - **Programación:** `30 23 * * *` → todos los días a las 11:30 PM.
