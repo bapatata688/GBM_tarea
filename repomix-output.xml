@@ -1,0 +1,1370 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+assets/
+  img/
+    anomalias.png
+    banca_linea.jpg
+    diagrama_de_flujo.png
+    transferencia.jpg
+data/
+  transacciones_diarias.csv
+sql/
+  analisis_anomalias.sql
+src/
+  __init__.py
+  cargar.py
+  main.py
+  transformar.py
+tests/
+  test_transformar.py
+.env.example
+dag_transacciones.py
+pipeline_etl_fraude.ipynb
+README.md
+requirements.txt
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="data/transacciones_diarias.csv">
+id_transaccion,id_cliente,fecha_hora,monto_usd,tipo_comercio,estado_transaccion
+T-001,C-101,2026-06-18 08:00:00,50.00,nacional,aprobada
+T-001,C-101,2026-06-18 08:05:00,50.00,nacional,aprobada
+T-002,C-102,2026-06-18 08:15:00,,internacional,rechazada
+T-003,C-103,2026-06-18 08:20:00,120.50,nacional,pendiente
+T-004,C-104,2026-06-18 08:45:00,1850.00,internacional,aprobada
+T-005,C-101,2026-06-18 09:30:00,350.00,internacional,aprobada
+T-006,C-105,2026-06-18 09:35:00,,nacional,rechazada
+T-007,C-102,2026-06-18 09:40:00,25.00,nacional,aprobada
+T-008,C-102,2026-06-18 09:45:00,500.00,internacional,rechazada
+T-009,C-106,2026-06-18 09:50:00,2000.00,nacional,aprobada
+T-010,C-107,2026-06-18 09:55:00,1600.00,internacional,pendiente
+T-011,C-108,2026-06-18 10:00:00,45.00,nacional,aprobada
+T-012,C-109,2026-06-18 10:05:00,80.00,internacional,aprobada
+T-013,C-110,2026-06-18 10:10:00,210.00,nacional,aprobada
+T-014,C-111,2026-06-18 10:15:00,15.50,nacional,aprobada
+T-015,C-112,2026-06-18 10:20:00,600.00,internacional,rechazada
+T-016,C-113,2026-06-18 10:25:00,30.00,nacional,pendiente
+T-017,C-114,2026-06-18 10:30:00,90.00,internacional,aprobada
+T-018,C-115,2026-06-18 10:35:00,1200.00,nacional,aprobada
+T-019,C-116,2026-06-18 10:40:00,450.00,internacional,aprobada
+T-020,C-117,2026-06-18 10:45:00,75.20,nacional,aprobada
+T-021,C-118,2026-06-18 10:50:00,,nacional,rechazada
+T-022,C-119,2026-06-18 10:55:00,340.00,internacional,aprobada
+T-023,C-120,2026-06-18 11:00:00,25.00,nacional,aprobada
+T-024,C-120,2026-06-18 11:15:00,150.00,internacional,aprobada
+T-025,C-121,2026-06-18 11:20:00,10.00,nacional,aprobada
+T-026,C-122,2026-06-18 11:25:00,55.00,internacional,pendiente
+T-027,C-123,2026-06-18 11:30:00,890.00,nacional,aprobada
+T-028,C-124,2026-06-18 11:35:00,45.00,internacional,aprobada
+T-029,C-125,2026-06-18 11:40:00,110.00,nacional,aprobada
+T-030,C-126,2026-06-18 11:45:00,300.00,internacional,rechazada
+T-031,C-127,2026-06-18 11:50:00,1550.00,internacional,aprobada
+T-032,C-128,2026-06-18 11:55:00,40.00,nacional,aprobada
+T-033,C-129,2026-06-18 12:00:00,99.99,internacional,aprobada
+T-034,C-130,2026-06-18 12:05:00,12.50,nacional,aprobada
+T-035,C-131,2026-06-18 12:10:00,75.00,internacional,pendiente
+T-036,C-132,2026-06-18 12:15:00,400.00,nacional,aprobada
+T-037,C-133,2026-06-18 12:20:00,1900.00,internacional,aprobada
+T-038,C-134,2026-06-18 12:25:00,50.00,nacional,aprobada
+T-039,C-135,2026-06-18 12:30:00,,internacional,rechazada
+T-040,C-136,2026-06-18 12:35:00,320.00,nacional,aprobada
+T-041,C-137,2026-06-18 12:40:00,18.00,internacional,aprobada
+T-042,C-138,2026-06-18 12:45:00,210.00,nacional,aprobada
+T-043,C-139,2026-06-18 12:50:00,15.00,internacional,pendiente
+T-044,C-140,2026-06-18 12:55:00,60.00,nacional,aprobada
+T-045,C-141,2026-06-18 13:00:00,105.00,internacional,aprobada
+T-046,C-142,2026-06-18 13:05:00,850.00,nacional,rechazada
+T-047,C-143,2026-06-18 13:10:00,22.50,internacional,aprobada
+T-048,C-144,2026-06-18 13:15:00,45.00,nacional,aprobada
+T-049,C-145,2026-06-18 13:20:00,300.00,internacional,aprobada
+T-050,C-146,2026-06-18 13:25:00,15.00,nacional,aprobada
+T-051,C-146,2026-06-18 13:50:00,100.00,internacional,aprobada
+T-052,C-147,2026-06-18 13:35:00,2100.00,nacional,aprobada
+T-053,C-148,2026-06-18 13:40:00,65.00,internacional,pendiente
+T-054,C-149,2026-06-18 13:45:00,11.00,nacional,aprobada
+T-055,C-150,2026-06-18 13:50:00,400.00,internacional,aprobada
+T-056,C-151,2026-06-18 13:55:00,80.00,nacional,aprobada
+T-057,C-152,2026-06-18 14:00:00,,internacional,rechazada
+T-058,C-153,2026-06-18 14:05:00,140.00,nacional,aprobada
+T-059,C-154,2026-06-18 14:10:00,22.00,internacional,aprobada
+T-060,C-155,2026-06-18 14:15:00,600.00,nacional,rechazada
+T-061,C-156,2026-06-18 14:20:00,35.00,internacional,aprobada
+T-062,C-157,2026-06-18 14:25:00,99.00,nacional,aprobada
+T-063,C-158,2026-06-18 14:30:00,1800.00,internacional,aprobada
+T-063,C-158,2026-06-18 14:30:00,1800.00,internacional,aprobada
+T-064,C-159,2026-06-18 14:40:00,45.00,nacional,aprobada
+T-065,C-160,2026-06-18 14:45:00,12.00,internacional,pendiente
+T-066,C-161,2026-06-18 14:50:00,250.00,nacional,aprobada
+T-067,C-162,2026-06-18 14:55:00,18.50,internacional,aprobada
+T-068,C-163,2026-06-18 15:00:00,90.00,nacional,aprobada
+T-069,C-164,2026-06-18 15:05:00,75.00,internacional,aprobada
+T-070,C-165,2026-06-18 15:10:00,320.00,nacional,rechazada
+T-071,C-166,2026-06-18 15:15:00,45.00,internacional,aprobada
+T-072,C-167,2026-06-18 15:20:00,,nacional,rechazada
+T-073,C-168,2026-06-18 15:25:00,150.00,internacional,aprobada
+T-074,C-169,2026-06-18 15:30:00,19.99,nacional,aprobada
+T-075,C-170,2026-06-18 15:35:00,55.00,internacional,aprobada
+T-076,C-171,2026-06-18 15:40:00,1650.00,nacional,aprobada
+T-077,C-172,2026-06-18 15:45:00,28.00,internacional,pendiente
+T-078,C-173,2026-06-18 15:50:00,80.00,nacional,aprobada
+T-079,C-174,2026-06-18 15:55:00,120.00,internacional,aprobada
+T-080,C-175,2026-06-18 16:00:00,45.00,nacional,aprobada
+T-081,C-176,2026-06-18 16:05:00,300.00,internacional,rechazada
+T-082,C-177,2026-06-18 16:10:00,14.00,nacional,aprobada
+T-083,C-178,2026-06-18 16:15:00,85.00,internacional,aprobada
+T-084,C-179,2026-06-18 16:20:00,210.00,nacional,aprobada
+T-085,C-180,2026-06-18 16:25:00,15.50,internacional,aprobada
+T-086,C-181,2026-06-18 16:30:00,600.00,nacional,aprobada
+T-087,C-182,2026-06-18 16:35:00,30.00,internacional,pendiente
+T-088,C-183,2026-06-18 16:40:00,90.00,nacional,aprobada
+T-089,C-184,2026-06-18 16:45:00,,internacional,rechazada
+T-090,C-185,2026-06-18 16:50:00,1200.00,nacional,aprobada
+T-091,C-186,2026-06-18 16:55:00,450.00,internacional,aprobada
+T-092,C-187,2026-06-18 17:00:00,75.20,nacional,aprobada
+T-093,C-188,2026-06-18 17:05:00,2500.00,internacional,aprobada
+T-094,C-189,2026-06-18 17:10:00,340.00,nacional,aprobada
+T-095,C-190,2026-06-18 17:15:00,25.00,internacional,aprobada
+T-096,C-191,2026-06-18 17:20:00,150.00,nacional,aprobada
+T-097,C-192,2026-06-18 17:25:00,10.00,internacional,pendiente
+T-098,C-193,2026-06-18 17:30:00,55.00,nacional,aprobada
+T-099,C-194,2026-06-18 17:35:00,890.00,internacional,aprobada
+T-100,C-195,2026-06-18 17:40:00,45.00,nacional,aprobada
+T-101,C-196,2026-06-18 17:45:00,,nacional,rechazada
+T-102,C-197,2026-06-18 17:50:00,300.00,internacional,aprobada
+T-103,C-198,2026-06-18 17:55:00,1550.00,nacional,aprobada
+T-104,C-199,2026-06-18 18:00:00,40.00,internacional,aprobada
+T-105,C-200,2026-06-18 18:05:00,99.99,nacional,aprobada
+T-106,C-201,2026-06-18 18:10:00,12.50,internacional,pendiente
+T-107,C-202,2026-06-18 18:15:00,75.00,nacional,aprobada
+T-108,C-203,2026-06-18 18:20:00,400.00,internacional,rechazada
+T-109,C-204,2026-06-18 18:25:00,1900.00,nacional,aprobada
+T-110,C-205,2026-06-18 18:30:00,50.00,internacional,aprobada
+T-111,C-206,2026-06-18 18:35:00,320.00,nacional,aprobada
+T-112,C-207,2026-06-18 18:40:00,,internacional,rechazada
+T-113,C-208,2026-06-18 18:45:00,210.00,nacional,aprobada
+T-114,C-209,2026-06-18 18:50:00,15.00,internacional,pendiente
+T-115,C-210,2026-06-18 18:55:00,60.00,nacional,aprobada
+T-116,C-101,2026-06-18 19:00:00,10.00,nacional,aprobada
+T-117,C-101,2026-06-18 19:15:00,80.00,internacional,aprobada
+T-118,C-211,2026-06-18 19:20:00,850.00,nacional,rechazada
+T-119,C-212,2026-06-18 19:25:00,22.50,internacional,aprobada
+T-120,C-213,2026-06-18 19:30:00,45.00,nacional,aprobada
+T-121,C-214,2026-06-18 19:35:00,300.00,internacional,aprobada
+T-121,C-214,2026-06-18 19:35:00,300.00,internacional,aprobada
+T-122,C-215,2026-06-18 19:45:00,15.00,nacional,aprobada
+</file>
+
+<file path="sql/analisis_anomalias.sql">
+-- Detecta clientes cuya transacción actual es al menos 5 veces mayor
+-- que su transacción inmediatamente anterior.
+-- Regla de negocio 4: se parte de fraud_analysis, vista que ya filtra
+-- estado_transaccion = 'aprobada', así que pendientes y rechazadas
+-- quedan excluidas estructuralmente, no por un WHERE adicional aquí.
+
+WITH transacciones_ordenadas AS (
+    SELECT
+        id_cliente,
+        id_transaccion,
+        fecha_hora,
+        monto_usd,
+        LAG(monto_usd) OVER (
+            PARTITION BY id_cliente
+            ORDER BY fecha_hora
+        ) AS monto_anterior
+    FROM fraud_analysis
+)
+SELECT
+    id_cliente,
+    id_transaccion,
+    fecha_hora,
+    monto_anterior,
+    monto_usd,
+    ROUND(monto_usd / monto_anterior, 2) AS factor_incremento
+FROM transacciones_ordenadas
+WHERE monto_anterior > 0
+  AND monto_usd >= monto_anterior * 5
+ORDER BY factor_incremento DESC;
+</file>
+
+<file path="src/__init__.py">
+
+</file>
+
+<file path="src/cargar.py">
+import os
+from datetime import datetime, timezone
+
+from sqlalchemy import create_engine, text
+
+DDL_TABLA = """
+CREATE TABLE IF NOT EXISTS transactions_clean (
+    id_transaccion TEXT PRIMARY KEY,
+    id_cliente TEXT,
+    fecha_hora TIMESTAMP,
+    monto_usd NUMERIC,
+    tipo_comercio TEXT,
+    estado_transaccion TEXT,
+    es_monto_inusual BOOLEAN,
+    procesado_en TIMESTAMP
+)
+"""
+
+DDL_VISTA = """
+CREATE OR REPLACE VIEW fraud_analysis AS
+SELECT * FROM transactions_clean WHERE estado_transaccion = 'aprobada'
+"""
+
+UPSERT_DESDE_STAGING = """
+INSERT INTO transactions_clean
+SELECT * FROM transacciones_staging
+ON CONFLICT (id_transaccion) DO NOTHING
+"""
+
+
+def obtener_engine():
+    # Formato esperado: postgresql+psycopg2://usuario:clave@host:puerto/bd
+    return create_engine(os.environ["SUPABASE_DB_URL"])
+
+
+def cargar(df, engine=None):
+    engine = engine or obtener_engine()
+    df = df.copy()
+    df["procesado_en"] = datetime.now(timezone.utc)
+
+    with engine.begin() as conexion:
+        conexion.execute(text(DDL_TABLA))
+        conexion.execute(text(DDL_VISTA))
+        df.to_sql("transacciones_staging", conexion, if_exists="replace", index=False)
+        # ponytail: DO NOTHING en conflicto evita reinsertar si el DAG reintenta el
+        # mismo día; no actualiza filas existentes. Si se necesita corregir datos ya
+        # cargados, cambiar a DO UPDATE SET ... por columna.
+        conexion.execute(text(UPSERT_DESDE_STAGING))
+        conexion.execute(text("DROP TABLE transacciones_staging"))
+</file>
+
+<file path="src/main.py">
+import sys
+
+from .cargar import cargar
+from .transformar import transformar
+
+RUTA_CSV_DEFECTO = "data/transacciones_diarias.csv"
+
+
+def main(ruta_csv=RUTA_CSV_DEFECTO):
+    df = transformar(ruta_csv)
+    cargar(df)
+    print(f"{len(df)} transacciones procesadas y cargadas en transactions_clean")
+    return df
+
+
+if __name__ == "__main__":
+    main(sys.argv[1] if len(sys.argv) > 1 else RUTA_CSV_DEFECTO)
+</file>
+
+<file path="src/transformar.py">
+import pandas as pd
+
+MONTO_MINIMO_INUSUAL = 1500
+TIPO_COMERCIO_INUSUAL = "internacional"
+ESTADO_RECHAZADA = "rechazada"
+
+
+def leer_csv(ruta):
+    return pd.read_csv(ruta, parse_dates=["fecha_hora"])
+
+
+def eliminar_duplicados(df):
+    # Regla 1: id_transaccion es el identificador único de deduplicación
+    return df.drop_duplicates(subset="id_transaccion", keep="first")
+
+
+def corregir_montos_rechazados(df):
+    # Regla 2: monto nulo en una transacción rechazada equivale a 0.0
+    mascara = df["monto_usd"].isna() & (df["estado_transaccion"] == ESTADO_RECHAZADA)
+    df.loc[mascara, "monto_usd"] = 0.0
+    return df
+
+
+def marcar_montos_inusuales(df):
+    # Regla 3: inusual solo si monto > 1500 USD y el comercio es internacional
+    df["es_monto_inusual"] = (df["monto_usd"] > MONTO_MINIMO_INUSUAL) & (
+        df["tipo_comercio"] == TIPO_COMERCIO_INUSUAL
+    )
+    return df
+
+
+def transformar(ruta_csv):
+    df = leer_csv(ruta_csv)
+    df = eliminar_duplicados(df)
+    df = corregir_montos_rechazados(df)
+    df = marcar_montos_inusuales(df)
+    return df
+</file>
+
+<file path="tests/test_transformar.py">
+import sys
+from pathlib import Path
+
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+
+from transformar import (
+    corregir_montos_rechazados,
+    eliminar_duplicados,
+    marcar_montos_inusuales,
+)
+
+
+def test_reglas_de_negocio():
+    df = pd.DataFrame(
+        {
+            "id_transaccion": ["T-1", "T-1", "T-2", "T-3"],
+            "monto_usd": [100.0, 100.0, None, 2000.0],
+            "tipo_comercio": ["nacional", "nacional", "internacional", "internacional"],
+            "estado_transaccion": ["aprobada", "aprobada", "rechazada", "aprobada"],
+        }
+    )
+
+    df = eliminar_duplicados(df)
+    assert len(df) == 3, "debe eliminar el duplicado T-1"
+
+    df = corregir_montos_rechazados(df)
+    monto_rechazada = df.loc[df["id_transaccion"] == "T-2", "monto_usd"].iloc[0]
+    assert monto_rechazada == 0.0, "monto nulo en rechazada debe quedar en 0.0"
+
+    df = marcar_montos_inusuales(df)
+    inusual = df.set_index("id_transaccion")["es_monto_inusual"]
+    assert inusual["T-3"], "monto > 1500 e internacional debe marcarse inusual"
+    assert not inusual["T-1"], "nacional no debe marcarse inusual aunque el monto sea alto"
+    assert not inusual["T-2"], "monto 0.0 (rechazada corregida) no debe ser inusual"
+
+    print("OK: las 3 reglas de negocio se cumplen")
+
+
+if __name__ == "__main__":
+    test_reglas_de_negocio()
+</file>
+
+<file path=".env.example">
+SUPABASE_DB_URL=postgresql+psycopg2://postgres:[la_contrasenia_supabase]@db.wyggdyixunthtbeflwpc.supabase.co:5432/postgres
+</file>
+
+<file path="dag_transacciones.py">
+from datetime import datetime
+
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+
+from src.main import main as transformar_y_cargar
+
+with DAG(
+    dag_id="dag_transacciones_fraude",
+    description="Limpieza, carga y análisis diario de transacciones de tarjetas",
+    schedule="30 23 * * *",  # 11:30 PM todos los días
+    start_date=datetime(2026, 6, 1),
+    catchup=False,
+    default_args={"retries": 2},
+) as dag:
+
+    tarea_transformar_y_cargar = PythonOperator(
+        task_id="transformar_y_cargar",
+        python_callable=transformar_y_cargar,
+    )
+
+    tarea_analizar_anomalias = PostgresOperator(
+        task_id="analizar_anomalias",
+        postgres_conn_id="supabase_postgres",
+        sql="sql/analisis_anomalias.sql",
+    )
+
+    # trigger_rule por defecto es "all_success": si la transformación/carga
+    # falla, el análisis SQL no se ejecuta sobre datos a medio cargar.
+    tarea_transformar_y_cargar >> tarea_analizar_anomalias
+</file>
+
+<file path="pipeline_etl_fraude.ipynb">
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "5b45739b",
+   "metadata": {},
+   "source": [
+    "# 🏦 Prueba Técnica — Associate Data Engineer\n",
+    "## Pipeline ETL: Limpieza, Carga y Detección de Anomalías de Fraude\n",
+    "\n",
+    "<img src=\"../assets/img/banca_linea.jpg\" width=\"700\" alt=\"Banca en línea\"/>\n",
+    "\n",
+    "> **Contexto:** Pipeline de limpieza, transformación y detección de anomalías de gasto  \n",
+    "> para transacciones de tarjetas de crédito en el área de prevención de fraude bancario.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "### Stack tecnológico\n",
+    "\n",
+    "| Capa | Tecnología |\n",
+    "|------|-----------|\n",
+    "| Transformación | Python · Pandas |\n",
+    "| Persistencia | PostgreSQL (Supabase) via SQLAlchemy |\n",
+    "| Orquestación | Apache Airflow (DAG diario 23:30) |\n",
+    "| Análisis | SQL · Window Functions (LAG) |\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1290b6f5",
+   "metadata": {},
+   "source": [
+    "## 0. Setup e importaciones"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "958fca69",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import matplotlib.ticker as mticker\n",
+    "import warnings, textwrap\n",
+    "\n",
+    "warnings.filterwarnings(\"ignore\")\n",
+    "\n",
+    "# ── constantes de negocio (espejo de transformar.py) ─────────────────────────\n",
+    "RUTA_CSV          = \"data/transacciones_diarias.csv\"\n",
+    "MONTO_MIN_INUSUAL = 1_500       # USD\n",
+    "TIPO_INUSUAL      = \"internacional\"\n",
+    "UMBRAL_ANOMALIA   = 5           # factor multiplicador para Regla 4\n",
+    "\n",
+    "plt.rcParams.update({\n",
+    "    \"figure.dpi\": 110,\n",
+    "    \"axes.spines.top\": False,\n",
+    "    \"axes.spines.right\": False,\n",
+    "    \"axes.prop_cycle\": plt.cycler(color=[\"#2563eb\",\"#16a34a\",\"#dc2626\",\"#d97706\",\"#7c3aed\"]),\n",
+    "})\n",
+    "print(\"✅  Entorno listo\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8d7678a9",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## Fase 1 — Diseño del Flujo y Justificación\n",
+    "\n",
+    "### 1.1 Justificación de Calidad de Datos\n",
+    "\n",
+    "En un entorno bancario la calidad de los datos es crítica para la confiabilidad\n",
+    "de los modelos de detección de fraude. Las cuatro reglas de negocio implementadas son:\n",
+    "\n",
+    "| # | Regla | Motivación |\n",
+    "|---|-------|-----------|\n",
+    "| R1 | Eliminar duplicados por `id_transaccion` | Evita contabilizar la misma operación múltiples veces |\n",
+    "| R2 | Rellenar `monto_usd = 0.0` en `rechazada` | Una transacción rechazada no es movimiento financiero real |\n",
+    "| R3 | Marcar `es_monto_inusual` | Flag temprano para monitoreo de fraude internacional |\n",
+    "| R4 | Detectar saltos de gasto ≥ 5× (SQL) | Identifica comportamientos de gasto anómalos en tiempo real |\n",
+    "\n",
+    "### 1.2 Arquitectura ETL\n",
+    "\n",
+    "<img src=\"assets/img/diagrama_de_flujo.png\" width=\"750\" alt=\"Diagrama de flujo del pipeline\"/>\n",
+    "\n",
+    "```\n",
+    "CSV diario ──► transformar.py (Pandas) ──► cargar.py (SQLAlchemy) ──► transactions_clean (PK)\n",
+    "                                                                              │\n",
+    "                                                                    fraud_analysis (VIEW)\n",
+    "                                                                              │\n",
+    "                                                              analisis_anomalias.sql (LAG)\n",
+    "```\n",
+    "\n",
+    "El DAG de Airflow orquesta ambas tareas a las 23:30 con `trigger_rule=all_success`,\n",
+    "garantizando que el análisis SQL sólo corra sobre datos completamente cargados.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2be928f7",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## Fase 2 — Construcción\n",
+    "\n",
+    "### 2.1 Carga del CSV crudo\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "78c48be4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df_raw = pd.read_csv(RUTA_CSV, parse_dates=[\"fecha_hora\"])\n",
+    "\n",
+    "print(f\"Dimensiones: {df_raw.shape[0]} filas × {df_raw.shape[1]} columnas\")\n",
+    "print(f\"\\nColumnas: {list(df_raw.columns)}\")\n",
+    "print(f\"\\nNulos por columna:\\n{df_raw.isnull().sum().to_string()}\")\n",
+    "df_raw.head(10)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f03ad659",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Distribución inicial del estado de transacciones\n",
+    "estado_counts = df_raw[\"estado_transaccion\"].value_counts()\n",
+    "print(\"Distribución de estados (crudo):\")\n",
+    "print(estado_counts.to_string())\n",
+    "\n",
+    "fig, ax = plt.subplots(figsize=(6, 3.5))\n",
+    "bars = ax.bar(estado_counts.index, estado_counts.values, width=0.5)\n",
+    "ax.bar_label(bars, padding=3, fontsize=10)\n",
+    "ax.set_title(\"Estado de transacciones — CSV crudo\", fontweight=\"bold\")\n",
+    "ax.set_ylabel(\"Cantidad\")\n",
+    "plt.tight_layout()\n",
+    "plt.savefig(\"assets/img/estado_transacciones_raw.png\", dpi=110, bbox_inches=\"tight\")\n",
+    "plt.show()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "58b2b96f",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.2 Regla 1 — Deduplicación por `id_transaccion`\n",
+    "\n",
+    "`id_transaccion` es la clave única de negocio. Se conserva la primera ocurrencia\n",
+    "y se descartan las repeticiones — independientemente de si difieren en timestamps.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4bf41c80",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Identificar duplicados antes de eliminar\n",
+    "duplicados = df_raw[df_raw.duplicated(subset=\"id_transaccion\", keep=False)]\n",
+    "if len(duplicados):\n",
+    "    print(f\"⚠️  {len(duplicados)} filas con id_transaccion duplicado:\")\n",
+    "    print(duplicados[[\"id_transaccion\",\"fecha_hora\",\"monto_usd\",\"estado_transaccion\"]].to_string())\n",
+    "else:\n",
+    "    print(\"Sin duplicados encontrados\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "99074283",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def eliminar_duplicados(df):\n",
+    "    \"\"\"Regla 1: mantener la primera aparición de cada id_transaccion.\"\"\"\n",
+    "    antes = len(df)\n",
+    "    df = df.drop_duplicates(subset=\"id_transaccion\", keep=\"first\")\n",
+    "    eliminados = antes - len(df)\n",
+    "    print(f\"R1 — Deduplicación: {antes} → {len(df)} filas  ({eliminados} eliminadas)\")\n",
+    "    return df\n",
+    "\n",
+    "df = eliminar_duplicados(df_raw.copy())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b54666a9",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.3 Regla 2 — Corrección de `monto_usd` nulo en transacciones rechazadas\n",
+    "\n",
+    "Una transacción `rechazada` no mueve fondos reales, por lo que `monto_usd = NULL`\n",
+    "es semánticamente equivalente a `0.0`. Se rellenan sólo los nulos de filas rechazadas;\n",
+    "los nulos en `aprobada` o `pendiente` se dejan intactos para revisión manual.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "69405f27",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def corregir_montos_rechazados(df):\n",
+    "    \"\"\"Regla 2: NULL en monto de transacción rechazada → 0.0.\"\"\"\n",
+    "    mascara = df[\"monto_usd\"].isna() & (df[\"estado_transaccion\"] == \"rechazada\")\n",
+    "    n_corregidos = mascara.sum()\n",
+    "    df.loc[mascara, \"monto_usd\"] = 0.0\n",
+    "    print(f\"R2 — Corrección de nulos: {n_corregidos} transacciones rechazadas con monto → 0.0\")\n",
+    "    return df\n",
+    "\n",
+    "# Nulos antes\n",
+    "nulos_antes = df[\"monto_usd\"].isna().sum()\n",
+    "df = corregir_montos_rechazados(df)\n",
+    "nulos_despues = df[\"monto_usd\"].isna().sum()\n",
+    "print(f\"     Nulos restantes en monto_usd: {nulos_despues} (eran {nulos_antes})\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a70bab64",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Verificar que no quedaron nulos en rechazadas\n",
+    "rechazadas_con_nulo = df[(df[\"estado_transaccion\"] == \"rechazada\") & df[\"monto_usd\"].isna()]\n",
+    "assert len(rechazadas_con_nulo) == 0, \"Hay rechazadas con monto nulo — revisar R2\"\n",
+    "print(\"✅  Verificación R2 OK: ninguna transacción rechazada tiene monto nulo\")\n",
+    "\n",
+    "df[df[\"estado_transaccion\"] == \"rechazada\"][\n",
+    "    [\"id_transaccion\",\"fecha_hora\",\"monto_usd\",\"estado_transaccion\"]\n",
+    "].head(8)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "90955964",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.4 Regla 3 — Marcación de montos inusuales (`es_monto_inusual`)\n",
+    "\n",
+    "Un monto se considera inusual cuando **ambas** condiciones se cumplen:\n",
+    "\n",
+    "- `monto_usd > 1 500 USD`  \n",
+    "- `tipo_comercio == 'internacional'`\n",
+    "\n",
+    "Las transacciones internacionales de alto valor son el escenario de mayor riesgo\n",
+    "en sistemas de prevención de fraude de tarjetas.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff8b2b25",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def marcar_montos_inusuales(df):\n",
+    "    \"\"\"Regla 3: inusual = monto > 1500 AND tipo_comercio == internacional.\"\"\"\n",
+    "    df[\"es_monto_inusual\"] = (\n",
+    "        (df[\"monto_usd\"] > MONTO_MIN_INUSUAL) &\n",
+    "        (df[\"tipo_comercio\"] == TIPO_INUSUAL)\n",
+    "    )\n",
+    "    n_inusuales = df[\"es_monto_inusual\"].sum()\n",
+    "    print(f\"R3 — Montos inusuales marcados: {n_inusuales} transacciones\")\n",
+    "    return df\n",
+    "\n",
+    "df = marcar_montos_inusuales(df)\n",
+    "\n",
+    "# Tabla de inusuales\n",
+    "df[df[\"es_monto_inusual\"]][\n",
+    "    [\"id_transaccion\",\"id_cliente\",\"fecha_hora\",\"monto_usd\",\"tipo_comercio\",\"estado_transaccion\"]\n",
+    "].sort_values(\"monto_usd\", ascending=False)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "243cb65f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Scatter: monto por tipo de comercio, coloreado por es_monto_inusual\n",
+    "fig, ax = plt.subplots(figsize=(9, 4))\n",
+    "\n",
+    "for inusual, grp in df.groupby(\"es_monto_inusual\"):\n",
+    "    color  = \"#dc2626\" if inusual else \"#2563eb\"\n",
+    "    marker = \"D\"       if inusual else \"o\"\n",
+    "    label  = \"⚠ Inusual\" if inusual else \"Normal\"\n",
+    "    ax.scatter(\n",
+    "        grp[\"fecha_hora\"], grp[\"monto_usd\"],\n",
+    "        c=color, marker=marker, alpha=0.75, s=45, label=label, zorder=3\n",
+    "    )\n",
+    "\n",
+    "ax.axhline(MONTO_MIN_INUSUAL, color=\"#d97706\", ls=\"--\", lw=1.4, label=f\"Umbral ${MONTO_MIN_INUSUAL:,}\")\n",
+    "ax.set_title(\"Transacciones — distribución por monto y tipo de comercio\", fontweight=\"bold\")\n",
+    "ax.set_ylabel(\"Monto (USD)\")\n",
+    "ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f\"${x:,.0f}\"))\n",
+    "ax.legend()\n",
+    "fig.autofmt_xdate(rotation=30)\n",
+    "plt.tight_layout()\n",
+    "plt.savefig(\"assets/img/scatter_montos.png\", dpi=110, bbox_inches=\"tight\")\n",
+    "plt.show()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d91ad79c",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.5 Resumen — DataFrame limpio (`transactions_clean`)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "357d4887",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"=\" * 55)\n",
+    "print(\"RESUMEN PIPELINE DE TRANSFORMACIÓN\")\n",
+    "print(\"=\" * 55)\n",
+    "print(f\"Filas en CSV crudo       : {len(df_raw):>6}\")\n",
+    "print(f\"Filas tras deduplicar    : {len(df):>6}\")\n",
+    "print(f\"  Rechazadas corregidas  : {(df['estado_transaccion'] == 'rechazada').sum():>6}\")\n",
+    "print(f\"  Montos inusuales (R3)  : {df['es_monto_inusual'].sum():>6}\")\n",
+    "print(f\"  Aprobadas (→ vista)    : {(df['estado_transaccion'] == 'aprobada').sum():>6}\")\n",
+    "print(f\"  Pendientes             : {(df['estado_transaccion'] == 'pendiente').sum():>6}\")\n",
+    "print(\"=\" * 55)\n",
+    "df.dtypes\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "89a917bb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.describe(include=\"all\").T\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1236b296",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.6 Visualizaciones del dataset limpio\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ae5cf09b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig, axes = plt.subplots(1, 3, figsize=(14, 4))\n",
+    "\n",
+    "# 1 — Estado\n",
+    "estado = df[\"estado_transaccion\"].value_counts()\n",
+    "axes[0].bar(estado.index, estado.values, width=0.5)\n",
+    "axes[0].bar_label(axes[0].containers[0], padding=3)\n",
+    "axes[0].set_title(\"Estado de transacciones\")\n",
+    "axes[0].set_ylabel(\"Cantidad\")\n",
+    "\n",
+    "# 2 — Tipo de comercio\n",
+    "tipo = df[\"tipo_comercio\"].value_counts()\n",
+    "axes[1].bar(tipo.index, tipo.values, width=0.4)\n",
+    "axes[1].bar_label(axes[1].containers[0], padding=3)\n",
+    "axes[1].set_title(\"Tipo de comercio\")\n",
+    "\n",
+    "# 3 — Distribución de montos (sólo aprobadas)\n",
+    "aprobadas = df[(df[\"estado_transaccion\"] == \"aprobada\") & (df[\"monto_usd\"] > 0)]\n",
+    "axes[2].hist(aprobadas[\"monto_usd\"], bins=20, edgecolor=\"white\", linewidth=0.5)\n",
+    "axes[2].set_title(\"Distribución de montos\\n(aprobadas)\")\n",
+    "axes[2].set_xlabel(\"Monto USD\")\n",
+    "axes[2].set_ylabel(\"Frecuencia\")\n",
+    "axes[2].xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f\"${x:,.0f}\"))\n",
+    "\n",
+    "plt.suptitle(\"Dataset limpio — visión general\", fontweight=\"bold\", y=1.01)\n",
+    "plt.tight_layout()\n",
+    "plt.savefig(\"assets/img/dashboard_limpio.png\", dpi=110, bbox_inches=\"tight\")\n",
+    "plt.show()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "86f82f56",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.7 Regla 4 — Detección de anomalías (equivalente a `analisis_anomalias.sql`)\n",
+    "\n",
+    "En producción esta regla corre como `PostgresOperator` sobre la vista `fraud_analysis`.  \n",
+    "Aquí la replicamos en pandas con `shift()` para poder visualizar los resultados\n",
+    "sin necesitar una conexión a Supabase.\n",
+    "\n",
+    "<img src=\"assets/img/transferencia.jpg\" width=\"600\" alt=\"Transferencia electrónica\"/>\n",
+    "\n",
+    "```sql\n",
+    "-- analisis_anomalias.sql\n",
+    "WITH transacciones_ordenadas AS (\n",
+    "    SELECT\n",
+    "        id_cliente, id_transaccion, fecha_hora, monto_usd,\n",
+    "        LAG(monto_usd) OVER (PARTITION BY id_cliente ORDER BY fecha_hora) AS monto_anterior\n",
+    "    FROM fraud_analysis       -- VIEW: solo aprobadas\n",
+    ")\n",
+    "SELECT *, ROUND(monto_usd / monto_anterior, 2) AS factor_incremento\n",
+    "FROM transacciones_ordenadas\n",
+    "WHERE monto_anterior > 0\n",
+    "  AND monto_usd >= monto_anterior * 5\n",
+    "ORDER BY factor_incremento DESC;\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6f5ccf16",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Vista fraud_analysis → sólo transacciones aprobadas\n",
+    "fraud_view = df[df[\"estado_transaccion\"] == \"aprobada\"].copy()\n",
+    "\n",
+    "# LAG en pandas: ordenar por cliente + fecha y hacer shift dentro del grupo\n",
+    "fraud_view = fraud_view.sort_values([\"id_cliente\", \"fecha_hora\"])\n",
+    "fraud_view[\"monto_anterior\"] = (\n",
+    "    fraud_view.groupby(\"id_cliente\")[\"monto_usd\"].shift(1)\n",
+    ")\n",
+    "\n",
+    "# Aplicar la condición de la Regla 4\n",
+    "anomalias = fraud_view[\n",
+    "    (fraud_view[\"monto_anterior\"] > 0) &\n",
+    "    (fraud_view[\"monto_usd\"] >= fraud_view[\"monto_anterior\"] * UMBRAL_ANOMALIA)\n",
+    "].copy()\n",
+    "\n",
+    "anomalias[\"factor_incremento\"] = (\n",
+    "    (anomalias[\"monto_usd\"] / anomalias[\"monto_anterior\"]).round(2)\n",
+    ")\n",
+    "anomalias = anomalias.sort_values(\"factor_incremento\", ascending=False)\n",
+    "\n",
+    "print(f\"⚠️  Anomalías detectadas (salto ≥ {UMBRAL_ANOMALIA}×): {len(anomalias)}\")\n",
+    "anomalias[[\n",
+    "    \"id_cliente\",\"id_transaccion\",\"fecha_hora\",\n",
+    "    \"monto_anterior\",\"monto_usd\",\"factor_incremento\"\n",
+    "]]\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "955e0aac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "if len(anomalias) > 0:\n",
+    "    fig, ax = plt.subplots(figsize=(8, 4))\n",
+    "\n",
+    "    # Mostrar tabla visual de anomalías\n",
+    "    cols = [\"id_cliente\",\"id_transaccion\",\"monto_anterior\",\"monto_usd\",\"factor_incremento\"]\n",
+    "    tabla = anomalias[cols].reset_index(drop=True)\n",
+    "\n",
+    "    bars = ax.barh(\n",
+    "        tabla[\"id_transaccion\"],\n",
+    "        tabla[\"factor_incremento\"],\n",
+    "        color=\"#dc2626\", alpha=0.85\n",
+    "    )\n",
+    "    ax.bar_label(bars, labels=[f\"{v:.1f}×\" for v in tabla[\"factor_incremento\"]], padding=4)\n",
+    "    ax.set_xlabel(\"Factor de incremento (monto_actual / monto_anterior)\")\n",
+    "    ax.set_title(f\"Transacciones con salto de gasto ≥ {UMBRAL_ANOMALIA}× (Regla 4)\", fontweight=\"bold\")\n",
+    "    ax.axvline(UMBRAL_ANOMALIA, color=\"#d97706\", ls=\"--\", lw=1.4, label=f\"Umbral {UMBRAL_ANOMALIA}×\")\n",
+    "    ax.legend()\n",
+    "    plt.tight_layout()\n",
+    "    plt.savefig(\"assets/img/anomalias_detectadas.png\", dpi=110, bbox_inches=\"tight\")\n",
+    "    plt.show()\n",
+    "else:\n",
+    "    print(\"Sin anomalías con los datos actuales.\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "84d2495d",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.8 Carga a PostgreSQL / Supabase (`cargar.py`)\n",
+    "\n",
+    "El módulo `src/cargar.py` implementa el siguiente flujo:\n",
+    "\n",
+    "1. Lee `SUPABASE_DB_URL` desde variables de entorno (nunca credenciales en código).  \n",
+    "2. Crea `transactions_clean` (si no existe) con `id_transaccion` como `PRIMARY KEY`.  \n",
+    "3. Crea la vista `fraud_analysis` (`CREATE OR REPLACE VIEW`).  \n",
+    "4. Vuelca el DataFrame a una tabla temporal `transacciones_staging`.  \n",
+    "5. Ejecuta `INSERT … ON CONFLICT (id_transaccion) DO NOTHING` — el DAG puede\n",
+    "   reintentarse sin insertar duplicados.  \n",
+    "6. Elimina `transacciones_staging`.\n",
+    "\n",
+    "```python\n",
+    "# src/cargar.py — fragmento clave\n",
+    "def cargar(df, engine=None):\n",
+    "    engine = engine or obtener_engine()\n",
+    "    df = df.copy()\n",
+    "    df[\"procesado_en\"] = datetime.now(timezone.utc)\n",
+    "\n",
+    "    with engine.begin() as conexion:\n",
+    "        conexion.execute(text(DDL_TABLA))\n",
+    "        conexion.execute(text(DDL_VISTA))\n",
+    "        df.to_sql(\"transacciones_staging\", conexion, if_exists=\"replace\", index=False)\n",
+    "        conexion.execute(text(UPSERT_DESDE_STAGING))    # ON CONFLICT DO NOTHING\n",
+    "        conexion.execute(text(\"DROP TABLE transacciones_staging\"))\n",
+    "```\n",
+    "\n",
+    "Para ejecutar contra Supabase real:\n",
+    "\n",
+    "```bash\n",
+    "cp .env.example .env   # completar SUPABASE_DB_URL\n",
+    "export $(grep -v '^#' .env | xargs)\n",
+    "python3 -m src.main\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6fde1df8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Simulación de la carga: mostrar el DataFrame final listo para ingestar\n",
+    "from datetime import datetime, timezone\n",
+    "\n",
+    "df_final = df.copy()\n",
+    "df_final[\"procesado_en\"] = datetime.now(timezone.utc)\n",
+    "\n",
+    "print(f\"DataFrame listo para ingestar en transactions_clean\")\n",
+    "print(f\"Filas: {len(df_final)} | Columnas: {list(df_final.columns)}\")\n",
+    "df_final.tail(5)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "caeedb48",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "### 2.9 Self-check — Tests de las 3 reglas de negocio\n",
+    "\n",
+    "Replica la lógica de `tests/test_transformar.py` para validación inline.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4690f3ae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def test_reglas():\n",
+    "    from src.transformar import eliminar_duplicados, corregir_montos_rechazados, marcar_montos_inusuales\n",
+    "\n",
+    "    df_test = pd.DataFrame({\n",
+    "        \"id_transaccion\": [\"T-1\", \"T-1\", \"T-2\", \"T-3\"],\n",
+    "        \"monto_usd\":       [100.0, 100.0, None, 2000.0],\n",
+    "        \"tipo_comercio\":   [\"nacional\",\"nacional\",\"internacional\",\"internacional\"],\n",
+    "        \"estado_transaccion\": [\"aprobada\",\"aprobada\",\"rechazada\",\"aprobada\"],\n",
+    "    })\n",
+    "\n",
+    "    # R1\n",
+    "    df_test = eliminar_duplicados(df_test)\n",
+    "    assert len(df_test) == 3, \"R1 FALLO — debería haber 3 filas\"\n",
+    "    print(\"✅  R1 — Deduplicación OK\")\n",
+    "\n",
+    "    # R2\n",
+    "    df_test = corregir_montos_rechazados(df_test)\n",
+    "    monto_rechazada = df_test.loc[df_test[\"id_transaccion\"] == \"T-2\", \"monto_usd\"].iloc[0]\n",
+    "    assert monto_rechazada == 0.0, \"R2 FALLO — debería ser 0.0\"\n",
+    "    print(\"✅  R2 — Corrección de montos nulos OK\")\n",
+    "\n",
+    "    # R3\n",
+    "    df_test = marcar_montos_inusuales(df_test)\n",
+    "    inusual = df_test.set_index(\"id_transaccion\")[\"es_monto_inusual\"]\n",
+    "    assert inusual[\"T-3\"],  \"R3 FALLO — T-3 debería ser inusual\"\n",
+    "    assert not inusual[\"T-1\"], \"R3 FALLO — T-1 nacional no es inusual\"\n",
+    "    assert not inusual[\"T-2\"], \"R3 FALLO — T-2 monto=0 no es inusual\"\n",
+    "    print(\"✅  R3 — Marcación de montos inusuales OK\")\n",
+    "    print(\"\\n🎉  Todas las reglas de negocio verificadas correctamente\")\n",
+    "\n",
+    "try:\n",
+    "    test_reglas()\n",
+    "except ModuleNotFoundError:\n",
+    "    print(\"⚠️  Ejecutar desde la raíz del proyecto para importar src.transformar\")\n",
+    "    print(\"   Las reglas fueron validadas visualmente en las celdas anteriores.\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fabdcc8d",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## Fase 3 — Propuesta de Orquestación con Apache Airflow\n",
+    "\n",
+    "El archivo `dag_transacciones.py` define el DAG conceptual de producción:\n",
+    "\n",
+    "```python\n",
+    "# dag_transacciones.py\n",
+    "with DAG(\n",
+    "    dag_id=\"dag_transacciones_fraude\",\n",
+    "    schedule=\"30 23 * * *\",          # todos los días a las 23:30\n",
+    "    start_date=datetime(2026, 6, 1),\n",
+    "    catchup=False,\n",
+    "    default_args={\"retries\": 2},\n",
+    ") as dag:\n",
+    "\n",
+    "    tarea_transformar_y_cargar = PythonOperator(\n",
+    "        task_id=\"transformar_y_cargar\",\n",
+    "        python_callable=transformar_y_cargar,\n",
+    "    )\n",
+    "\n",
+    "    tarea_analizar_anomalias = PostgresOperator(\n",
+    "        task_id=\"analizar_anomalias\",\n",
+    "        postgres_conn_id=\"supabase_postgres\",\n",
+    "        sql=\"sql/analisis_anomalias.sql\",\n",
+    "    )\n",
+    "\n",
+    "    tarea_transformar_y_cargar >> tarea_analizar_anomalias\n",
+    "```\n",
+    "\n",
+    "### Flujo de dependencias\n",
+    "\n",
+    "```\n",
+    "[23:30] ──► transformar_y_cargar ──► analizar_anomalias\n",
+    "              PythonOperator            PostgresOperator\n",
+    "              (src.main.main)           (fraud_analysis VIEW)\n",
+    "              retries=2                 trigger: all_success\n",
+    "```\n",
+    "\n",
+    "**Decisiones clave:**\n",
+    "- `trigger_rule=all_success` (por defecto): el análisis SQL no corre si la carga falló — evita analizar datos a medio cargar.\n",
+    "- `catchup=False`: si el servidor estuvo caído, no reintenta días anteriores automáticamente.\n",
+    "- `retries=2`: tolerancia a fallos transitorios de red contra Supabase.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## Evidencia de ejecución en Supabase\n",
+    "\n",
+    "<img src=\"assets/img/anomalias.png\" width=\"750\" alt=\"Resultado en Supabase SQL Editor\"/>\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## Instrucciones de ejecución\n",
+    "\n",
+    "```bash\n",
+    "# 1. Crear entorno virtual\n",
+    "python3 -m venv venv && source venv/bin/activate\n",
+    "pip install -r requirements.txt\n",
+    "\n",
+    "# 2. Configurar credenciales\n",
+    "cp .env.example .env          # completar SUPABASE_DB_URL\n",
+    "export $(grep -v '^#' .env | xargs)\n",
+    "\n",
+    "# 3. Ejecutar pipeline completo\n",
+    "python3 -m src.main\n",
+    "\n",
+    "# 4. Self-check de reglas de negocio\n",
+    "python3 tests/test_transformar.py\n",
+    "\n",
+    "# 5. Análisis de anomalías: ejecutar sql/analisis_anomalias.sql\n",
+    "#    desde el SQL Editor de Supabase\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aea913a3",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "> **Autor:** Prueba Técnica — Associate Data Engineer  \n",
+    "> **Pipeline:** CSV → Pandas → PostgreSQL/Supabase → Airflow DAG  \n",
+    "> **Fecha:** Junio 2026\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+</file>
+
+<file path="requirements.txt">
+pandas
+sqlalchemy
+psycopg2-binary
+</file>
+
+<file path="README.md">
+# Prueba Técnica: Associate Data Engineer
+
+Pipeline de limpieza, carga y detección de anomalías de gasto para transacciones
+de tarjetas de crédito del área de prevención de fraude del banco.
+
+## Fase 1: Diseño del Flujo y Toma de Decisiones
+
+### 1. Justificación de Calidad de Datos
+
+En un entorno bancario, la calidad de los datos es un requisito fundamental para
+garantizar la confiabilidad de los análisis de fraude y la correcta toma de
+decisiones de negocio. Los modelos analíticos y las alertas operativas dependen
+directamente de la consistencia de la información procesada.
+
+La eliminación de registros duplicados evita que una misma transacción sea
+contabilizada múltiples veces, lo que podría generar falsos positivos en los
+análisis de comportamiento financiero y distorsionar métricas operativas.
+
+La corrección de valores faltantes en transacciones rechazadas permite mantener
+la integridad semántica de los datos. Dado que una transacción rechazada no
+representa un movimiento financiero efectivo, asignar un monto de 0.0
+estandariza el tratamiento de estos registros y evita inconsistencias
+posteriores.
+
+La clasificación de montos inusuales facilita la identificación temprana de
+patrones de riesgo. Las transacciones internacionales de alto valor representan
+un escenario común de monitoreo dentro de los sistemas de prevención de fraude y
+cumplimiento normativo.
+
+Finalmente, el aislamiento exclusivo de transacciones aprobadas para el análisis
+de anomalías garantiza que los modelos trabajen únicamente sobre movimientos
+financieros reales. Incluir operaciones rechazadas o pendientes podría
+introducir ruido analítico y afectar la precisión de los resultados.
+
+### 2. Decisiones de Arquitectura
+
+La solución propuesta implementa una arquitectura ETL ligera orientada a
+procesamiento batch diario.
+
+Aunque el archivo suministrado para la prueba es pequeño, el diseño considera un
+contexto bancario real donde diariamente pueden procesarse cientos de miles o
+incluso millones de transacciones. Diversos reportes del sector financiero
+salvadoreño indican que la banca digital del país concentra entre
+aproximadamente 725,000 y 1.5 millones de usuarios activos diarios considerando
+el ecosistema bancario nacional.
+
+Por esta razón, la arquitectura incorpora componentes ampliamente utilizados en
+entornos empresariales:
+
+- **Apache Airflow** para la orquestación y programación de pipelines.
+- **Pandas** para la transformación y limpieza de datos.
+- **PostgreSQL (Supabase)** como repositorio persistente de datos procesados.
+- **SQL** para consultas analíticas y generación de reportes.
+
+Apache Airflow permite definir DAGs que automatizan la ejecución diaria del
+proceso, proporcionando monitoreo, reintentos automáticos, trazabilidad y
+escalabilidad operativa. Estas características son especialmente relevantes en
+sistemas financieros donde la disponibilidad y confiabilidad del procesamiento
+son críticas.
+
+Pandas ofrece una implementación eficiente para el volumen esperado de la
+prueba técnica y simplifica la aplicación de reglas de calidad de datos
+mediante operaciones vectorizadas.
+
+PostgreSQL fue seleccionado por ser un motor relacional maduro, ampliamente
+utilizado en entornos empresariales, con soporte para transacciones ACID,
+índices, particionamiento y capacidades analíticas avanzadas. La utilización de
+Supabase permite disponer de una instancia PostgreSQL administrada reduciendo
+la complejidad operativa del despliegue.
+
+La arquitectura también permite una evolución futura hacia tecnologías de
+procesamiento distribuido como Apache Spark si el volumen de datos creciera
+significativamente.
+
+#### Tecnologías utilizadas
+
+- Apache Airflow
+- Python 3.x
+- Pandas
+- SQLAlchemy
+- PostgreSQL (Supabase)
+
+#### Justificación de las librerías
+
+**Pandas** — Aplicación de reglas de calidad, transformación y enriquecimiento
+de datos mediante operaciones vectorizadas sobre DataFrames.
+
+**SQLAlchemy** — Abstracción segura y mantenible para la conexión y carga de
+información hacia PostgreSQL.
+
+**Apache Airflow** — Orquestación, monitoreo, programación y observabilidad del
+pipeline de datos.
+
+**PostgreSQL (Supabase)** — Persistencia transaccional y soporte para consultas
+analíticas posteriores.
+
+**os (biblioteca estándar)** — Acceso a variables de entorno sin exponer
+credenciales en el código fuente (usuario, contraseña, host y cadena de
+conexión hacia Supabase se leen desde `SUPABASE_DB_URL`).
+
+#### Diagrama de flujo
+
+![diagrama de flujo](assets/img/diagrama_de_flujo.png)
+
+```mermaid
+flowchart LR
+    A[transacciones_diarias.csv] --> B[Pandas: transformar.py]
+    B -->|Regla 1: deduplicar| B
+    B -->|Regla 2: nulos en rechazada -> 0.0| B
+    B -->|Regla 3: es_monto_inusual| B
+    B --> C[(staging temporal)]
+    C -->|UPSERT ON CONFLICT DO NOTHING| D[(transactions_clean\nPK id_transaccion)]
+    D --> E[[VIEW fraud_analysis\nWHERE estado_transaccion = aprobada]]
+    E --> F[SQL: CTE + LAG\nanalisis_anomalias.sql]
+    G[Airflow DAG\n11:30 PM diario] --> B
+    G --> F
+```
+
+### 3. Estructura de Datos
+
+#### CSV de entrada (`data/transacciones_diarias.csv`)
+
+| Columna              | Tipo     | Notas                                          |
+| -------------------- | -------- | ---------------------------------------------- |
+| `id_transaccion`     | STRING   | Clave de deduplicación (Regla 1)               |
+| `id_cliente`         | STRING   | Identificador del cliente                      |
+| `fecha_hora`         | DATETIME | Timestamp de la operación                      |
+| `monto_usd`          | FLOAT    | Nullable — nulo válido en rechazadas (Regla 2) |
+| `tipo_comercio`      | STRING   | `nacional` / `internacional` (Regla 3)         |
+| `estado_transaccion` | STRING   | `aprobada` / `rechazada` / `pendiente`         |
+
+#### Base de datos (`PostgreSQL / Supabase`)
+
+**`transactions_clean`** (tabla) — Almacena todas las transacciones que
+superaron la limpieza. Incluye la columna derivada `es_monto_inusual`
+(calculada en la capa Pandas) y `procesado_en` para trazabilidad del pipeline.
+`id_transaccion` es `PRIMARY KEY` — segunda línea de defensa contra duplicados
+después de la deduplicación en memoria.
+
+**`fraud_analysis`** (VIEW) — No es una tabla independiente sino una vista SQL
+sobre `transactions_clean` con filtro `WHERE estado_transaccion = 'aprobada'`.
+Esto elimina la duplicación de storage, garantiza consistencia automática con
+los datos limpios y mantiene un único punto de escritura en el pipeline. Si el
+volumen crece y la vista se ve degradada en latencia, se puede migrar a una
+vista materializada (`MATERIALIZED VIEW`).
+
+## Fase 2: Construcción
+
+### Estructura del repositorio
+
+```
+.
+├── data/
+│   └── transacciones_diarias.csv
+├── src/
+│   ├── transformar.py   # Reglas 1, 2 y 3 (pandas)
+│   ├── cargar.py        # Conexión y carga a Supabase (SQLAlchemy)
+│   └── main.py           # Orquesta transformar() + cargar()
+├── sql/
+│   └── analisis_anomalias.sql   # Regla 4, CTE + Window Function
+├── tests/
+│   └── test_transformar.py      # Self-check de las 3 reglas
+├── dag_transacciones.py         # Orquestación conceptual (Fase 3)
+├── requirements.txt
+└── .env.example
+```
+
+### Instrucciones de ejecución
+
+```bash
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+cp .env.example .env          # completar con las credenciales reales de Supabase
+export $(grep -v '^#' .env | xargs)
+
+python3 -m src.main           # transforma data/transacciones_diarias.csv y carga a Supabase
+
+python3 tests/test_transformar.py   # self-check de las reglas de negocio
+```
+
+Una vez cargados los datos, ejecutar `sql/analisis_anomalias.sql` desde el SQL
+Editor de Supabase para obtener los clientes con saltos de gasto ≥ 5x.
+
+### Evidencia de ejecución en Supabase
+![imagen de anomalias](assets/img/anomalias.png)
+
+## Fase 3: Propuesta de Orquestación
+`dag_transacciones.py` define el DAG conceptual:
+
+- **Programación:** `30 23 * * *` → todos los días a las 11:30 PM.
+- **Tarea 1 — `transformar_y_cargar`:** `PythonOperator` que invoca
+  `src.main.main`, aplicando las reglas 1, 2 y 3 y cargando a
+  `transactions_clean`.
+- **Tarea 2 — `analizar_anomalias`:** `PostgresOperator` que ejecuta
+  `sql/analisis_anomalias.sql` contra `fraud_analysis` (Regla 4 aplicada
+  estructuralmente por la vista).
+- **Dependencia:** `tarea_transformar_y_cargar >> tarea_analizar_anomalias`. El
+  `trigger_rule` por defecto de Airflow (`all_success`) garantiza que el
+  análisis SQL solo corra si la carga finalizó sin errores.
+
+No se requiere levantar un servidor de Airflow para esta entrega; el archivo
+es código conceptual que demuestra sintaxis, _scheduling_ y dependencias.
+</file>
+
+</files>
