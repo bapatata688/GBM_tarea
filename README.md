@@ -95,20 +95,6 @@ conexión hacia Supabase se leen desde `SUPABASE_DB_URL`).
 
 ![diagrama de flujo](assets/img/diagrama_de_flujo.png)
 
-```mermaid
-flowchart LR
-    A[transacciones_diarias.csv] --> B[Pandas: transformar.py]
-    B -->|Regla 1: deduplicar| B
-    B -->|Regla 2: nulos en rechazada -> 0.0| B
-    B -->|Regla 3: es_monto_inusual| B
-    B --> C[(staging temporal)]
-    C -->|UPSERT ON CONFLICT DO NOTHING| D[(transactions_clean\nPK id_transaccion)]
-    D --> E[[VIEW fraud_analysis\nWHERE estado_transaccion = aprobada]]
-    E --> F[SQL: CTE + LAG\nanalisis_anomalias.sql]
-    G[Airflow DAG\n11:30 PM diario] --> B
-    G --> F
-```
-
 ### 3. Estructura de Datos
 
 #### CSV de entrada (`data/transacciones_diarias.csv`)
