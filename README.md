@@ -31,7 +31,7 @@ Finalmente, el aislamiento exclusivo de transacciones aprobadas para el análisi
 de anomalías garantiza que los modelos trabajen únicamente sobre movimientos
 financieros reales. Incluir operaciones rechazadas o pendientes podría
 introducir ruido analítico y afectar la precisión de los resultados.
-![bancos_moviles](assets/img/banca_linea.jpg)
+![imagen_ilustrativa_bancos](assets/img/banca_linea.jpg)
 
 ### 2. Decisiones de Arquitectura
 
@@ -64,7 +64,7 @@ utilizado en entornos empresariales, con soporte para transacciones ACID,
 índices, particionamiento y capacidades analíticas avanzadas. La utilización de
 Supabase permite disponer de una instancia PostgreSQL administrada reduciendo
 la complejidad operativa del despliegue.
-![etl](assets/img/etl_2.png)
+![imagen_ilustrativa_proceso_etl_del_ejercicio](assets/img/etl_2.png)
 
 #### Tecnologías utilizadas
 
@@ -93,7 +93,7 @@ conexión hacia Supabase se leen desde `SUPABASE_DB_URL`).
 
 #### Diagrama de flujo
 
-![diagrama de flujo](assets/img/diagrama_de_flujo.png)
+![diagrama_de_flujo](assets/img/diagrama_de_flujo.png)
 
 ### 3. Estructura de Datos
 
@@ -163,7 +163,7 @@ Editor de Supabase para obtener los clientes con saltos de gasto ≥ 5x.
 
 ### Evidencia de ejecución en Supabase
 
-![imagen de anomalias](assets/img/anomalias.png)
+![imagen_de_anomalias](assets/img/anomalias.png)
 
 ## Fase 3: Propuesta de Orquestación
 
