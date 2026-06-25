@@ -31,19 +31,17 @@ Finalmente, el aislamiento exclusivo de transacciones aprobadas para el análisi
 de anomalías garantiza que los modelos trabajen únicamente sobre movimientos
 financieros reales. Incluir operaciones rechazadas o pendientes podría
 introducir ruido analítico y afectar la precisión de los resultados.
+![bancos_moviles](assets/img/banca_linea)
 
 ### 2. Decisiones de Arquitectura
 
 La solución propuesta implementa una arquitectura ETL ligera orientada a
 procesamiento batch diario.
 
-Aunque el archivo suministrado para la prueba es pequeño, el diseño considera un
-contexto bancario real donde diariamente pueden procesarse cientos de miles o
-incluso millones de transacciones. Diversos reportes del sector financiero
-salvadoreño indican que la banca digital del país concentra entre
-aproximadamente 725,000 y 1.5 millones de usuarios activos diarios considerando
-el ecosistema bancario nacional.
-
+Aunque el archivo de entrada es pequeño, la arquitectura considera un escenario
+real donde diariamente podrían procesarse cientos de miles o millones de
+transacciones.
+![banca_linea](assets/img/transferencia.jpg)
 Por esta razón, la arquitectura incorpora componentes ampliamente utilizados en
 entornos empresariales:
 
@@ -68,10 +66,6 @@ utilizado en entornos empresariales, con soporte para transacciones ACID,
 Supabase permite disponer de una instancia PostgreSQL administrada reduciendo
 la complejidad operativa del despliegue.
 
-La arquitectura también permite una evolución futura hacia tecnologías de
-procesamiento distribuido como Apache Spark si el volumen de datos creciera
-significativamente.
-
 #### Tecnologías utilizadas
 
 - Apache Airflow
@@ -85,8 +79,7 @@ significativamente.
 **Pandas** — Aplicación de reglas de calidad, transformación y enriquecimiento
 de datos mediante operaciones vectorizadas sobre DataFrames.
 
-**SQLAlchemy** — Abstracción segura y mantenible para la conexión y carga de
-información hacia PostgreSQL.
+**SQLAlchemy** — Manejo de conexiones y persistencia hacia PostgreSQL.
 
 **Apache Airflow** — Orquestación, monitoreo, programación y observabilidad del
 pipeline de datos.
@@ -172,7 +165,7 @@ python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 cp .env.example .env          # completar con las credenciales reales de Supabase
-export $(grep -v '^#' .env | xargs)
+source .env
 
 python3 -m src.main           # transforma data/transacciones_diarias.csv y carga a Supabase
 
@@ -183,9 +176,11 @@ Una vez cargados los datos, ejecutar `sql/analisis_anomalias.sql` desde el SQL
 Editor de Supabase para obtener los clientes con saltos de gasto ≥ 5x.
 
 ### Evidencia de ejecución en Supabase
+
 ![imagen de anomalias](assets/img/anomalias.png)
 
 ## Fase 3: Propuesta de Orquestación
+
 `dag_transacciones.py` define el DAG conceptual:
 
 - **Programación:** `30 23 * * *` → todos los días a las 11:30 PM.
