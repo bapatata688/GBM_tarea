@@ -31,7 +31,7 @@ Finalmente, el aislamiento exclusivo de transacciones aprobadas para el análisi
 de anomalías garantiza que los modelos trabajen únicamente sobre movimientos
 financieros reales. Incluir operaciones rechazadas o pendientes podría
 introducir ruido analítico y afectar la precisión de los resultados.
-![bancos_moviles](assets/img/banca_linea)
+![bancos_moviles](assets/img/banca_linea.jpg)
 
 ### 2. Decisiones de Arquitectura
 
@@ -41,7 +41,6 @@ procesamiento batch diario.
 Aunque el archivo de entrada es pequeño, la arquitectura considera un escenario
 real donde diariamente podrían procesarse cientos de miles o millones de
 transacciones.
-![banca_linea](assets/img/transferencia.jpg)
 Por esta razón, la arquitectura incorpora componentes ampliamente utilizados en
 entornos empresariales:
 
@@ -65,6 +64,7 @@ utilizado en entornos empresariales, con soporte para transacciones ACID,
 índices, particionamiento y capacidades analíticas avanzadas. La utilización de
 Supabase permite disponer de una instancia PostgreSQL administrada reduciendo
 la complejidad operativa del despliegue.
+![etl](assets/img/etl_2.png)
 
 #### Tecnologías utilizadas
 
