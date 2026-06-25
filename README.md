@@ -151,7 +151,9 @@ python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 cp .env.example .env          # completar con las credenciales reales de Supabase
+set -a
 source .env
+set +a
 
 python3 -m src.main           # transforma data/transacciones_diarias.csv y carga a Supabase
 
