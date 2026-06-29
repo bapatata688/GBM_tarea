@@ -42,8 +42,6 @@ def cargar(df, engine=None):
         conexion.execute(text(DDL_TABLA))
         conexion.execute(text(DDL_VISTA))
         df.to_sql("transacciones_staging", conexion, if_exists="replace", index=False)
-        # ponytail: DO NOTHING en conflicto evita reinsertar si el DAG reintenta el
-        # mismo día; no actualiza filas existentes. Si se necesita corregir datos ya
-        # cargados, cambiar a DO UPDATE SET ... por columna.
+        
         conexion.execute(text(UPSERT_DESDE_STAGING))
         conexion.execute(text("DROP TABLE transacciones_staging"))
