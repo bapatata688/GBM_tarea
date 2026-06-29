@@ -3,6 +3,7 @@ import pandas as pd
 MONTO_MINIMO_INUSUAL = 1500
 TIPO_COMERCIO_INUSUAL = "internacional"
 ESTADO_RECHAZADA = "rechazada"
+ESTADO_APROBADO = "aprobado"
 
 
 def leer_csv(ruta):
@@ -23,10 +24,14 @@ def corregir_montos_rechazados(df):
 
 def marcar_montos_inusuales(df):
     # Regla 3: inusual solo si monto > 1500 USD y el comercio es internacional
-    df["es_monto_inusual"] = (df["monto_usd"] > MONTO_MINIMO_INUSUAL) & (
-        df["tipo_comercio"] == TIPO_COMERCIO_INUSUAL
+    # Regla 4: solamente las transacciones aprobadas
+    df["es_monto_inusual"] = (
+        (df["monto_usd"] > MONTO_MINIMO_INUSUAL)
+        & (df["tipo_comercio"] == TIPO_COMERCIO_INUSUAL)
+        & (df["estado_transaccion"] == ESTADO_APROBADO)
     )
     return df
+
 
 
 def transformar(ruta_csv):
